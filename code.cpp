@@ -139,7 +139,10 @@ class Intersection: public Region{
             r2 = c;
         }
         bool contains_point(Point a){
-            if( r1->contains_point(a) && r2->contains_point(a)) return true;
+            if( r1->contains_point(a) && r2->contains_point(a)){
+                cout<<"point is inside the intersection";
+                return true;
+            }
             else return false;
         }
 
@@ -162,10 +165,9 @@ class Circle: public Basic{
         Point centre;
         int radius;
     public:
-        Circle(Region *x, double a, double b, double c): Basic(x){
-            Point temp(a,b);
-            centre = temp;
-            radius = c;
+        Circle(Region *x, Point p, double r): Basic(x){
+            centre = p;
+            radius = r;
         }
         
         bool contains_point(Point a){
@@ -281,20 +283,50 @@ class Rectangle: public Basic{
 
 
 int main(){
-    cout<<fixed;
-    cout<<  setprecision(6);
-    Point p1(0,0), p2(1,0), p3(1,1), p4(0,1), p5(1, 1.0001), p6(2,0), p7(2,1);
-    Region *r1, *r2, *r3, *r4;
-    Square s(r1,p1,p2,p3,p4);
-    r1 = &s;
-    r1->translate(1,0);
-    Circle c(r2,1,1,1);
-    r2 = &c;
-    Intersection i(r1,r2);
-    r3 = &i;
-    Square t(r3, p2, p6, p7, p3);
-    r4 = &t;
-    Intersection i2(r3, r4);
-    cout<<i2.contains_point(p5);
+    // Origin is (0,0)
+    // All rotations and translations will be done with repect to it.
+    // If a point is inside a region 1 will be returned else 0.
 
+    // 1. Circle
+        Region *r;
+        Point a(1,0), cent(1,1);
+        
+        float rad = 1;
+        Circle c(r,cent,rad), c_copy(r,cent,rad);  // cent is Point for Centre and 1 is radius of circle
+        r = &c;
+
+        cout << "\n1. Checking where Point (" << a.get_x() << "," << a.get_y() <<") lies with respect to  circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << endl; 
+        
+        if (r->contains_point(a)) cout<<"\tPoint is inside the region"<< endl;
+        else cout<<"\tPoint is outside the region" << endl;
+
+
+        Point b(2,3);
+
+        
+        cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to  circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << endl; 
+        if (r->contains_point(b)) cout<<"\tPoint is inside the region"<< endl;
+        else cout<<"\tPoint is outside the region" << endl;
+
+        float x = 3, y = 3;
+
+        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        r->translate(x,y);
+        
+        
+        Point a1(1,0);
+        cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to  circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its translated version " << endl; 
+        // Now c_copy has the inital circle
+
+        if(c_copy.contains_point(a1) && !r->contains_point(a1)) cout<<"\tPoint is inside inital region but outside translated region" << endl;
+        else cout << "\tCan't say" << endl;
+
+        Point b1(4,3);
+        
+        cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to  circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its translated version " << endl; 
+        // Now c_copy has the inital circle
+
+        if(!c_copy.contains_point(b1) && r->contains_point(b1)) cout<<"\tPoint is outside inital region but inside translated region" << endl;
+        else cout << "\tCan't say" << endl;
+    
 }
