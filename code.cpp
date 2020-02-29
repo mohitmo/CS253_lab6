@@ -29,9 +29,17 @@ class Point{
             x = xnew;
             y = ynew;
         }
-        bool check_line(Point a, Point b, Point c, Point d){
-            float slope = ((a.get_y()-b.get_y)/(a.get_x()-b.get_x()));
-            float intercept = a.get_y() - slope*a.get_x();
+
+        bool check_line( Point b, Point c, Point d){
+
+            float slope = (( y-b.get_y() )/( x-b.get_x()));
+            float intercept = y - slope*x;
+            
+            float sat1 = c.get_y()-slope*c.get_x()-intercept;
+            float sat2 = d.get_y()-slope*d.get_x()-intercept;
+
+            if(sat1*sat2 >= 0.0) return true;
+            else return false;
         }
         
 };
@@ -176,39 +184,98 @@ class Circle: public Basic{
 };
 
 
-// class Triangle: public Basic{
-//     public: 
-//     Point a,b,c;
-//     Triangle(Region *x, Point a1, Point b1, Point c1): Basic(x){
-//         a = a1;
-//         b = b1;
-//         c = c1;
-//     }
+class Triangle: public Basic{
+    private: 
+        Point a,b,c;
+    public:
+        Triangle(Region *x, Point a1, Point b1, Point c1): Basic(x){
+            a = a1;
+            b = b1;
+            c = c1;
+        }
 
-//     bool contains_point(Point a){
-        
-//     }
+        bool contains_point(Point x){
+            if(a.check_line(b,c,x) && b.check_line(c,a,x) && c.check_line(a,b,x)) return true;
+            else return false;
+        }
 
-//     void tranlate(float x, float y){
-//         a.translate_point(x,y);
-//         b.translate_point(x,y);
-//         c.translate_point(x,y);
-//     }
-// };
+        void tranlate(float x, float y){
+            a.translate_point(x,y);
+            b.translate_point(x,y);
+            c.translate_point(x,y);
+        }
+        void rotate(float angle){
+            a.rotate_point(angle);
+            b.rotate_point(angle);
+            c.rotate_point(angle);
+        }
+};
 
+
+class Square: public Basic{
+    private:
+        Point a,b,c,d;
+    public:
+        Square(Region *x, Point a1, Point b1, Point c1, Point d1): Basic(x){
+            a = a1;
+            b = b1;
+            c = c1;
+            d = d1;
+        }
+
+        bool contains_point(Point x){
+            if(a.check_line(b,c,x) && b.check_line(c,a,x) && c.check_line(d,b,x) && d.check_line(a,c,x)) return true;
+            else return false;
+        }
+
+        void tranlate(float x, float y){
+            a.translate_point(x,y);
+            b.translate_point(x,y);
+            c.translate_point(x,y);
+            d.translate_point(x,y);
+        }
+        void rotate(float angle){
+            a.rotate_point(angle);
+            b.rotate_point(angle);
+            c.rotate_point(angle);
+            d.rotate_point(angle);
+        }
+};
+
+class Rectangle: public Basic{
+    private:
+        Point a,b,c,d;
+    public:
+        Rectangle(Region *x, Point a1, Point b1, Point c1, Point d1): Basic(x){
+            a = a1;
+            b = b1;
+            c = c1;
+            d = d1;
+        }
+
+        bool contains_point(Point x){
+            if(a.check_line(b,c,x) && b.check_line(c,a,x) && c.check_line(d,b,x) && d.check_line(a,c,x)) return true;
+            else return false;
+        }
+
+        void tranlate(float x, float y){
+            a.translate_point(x,y);
+            b.translate_point(x,y);
+            c.translate_point(x,y);
+            d.translate_point(x,y);
+        }
+        void rotate(float angle){
+            a.rotate_point(angle);
+            b.rotate_point(angle);
+            c.rotate_point(angle);
+            d.rotate_point(angle);
+        }
+};
 
 
 int main(){
     Region *r, *r1, *r2 ;
     Circle c(r1,0,0,1);
 
-    Point p(0,1);
-    r1 = &c;
     
-    // p.rotate_point(M_PI/2);
-    // cout<<p.get_x()<<" "<<p.get_y();
-    // cout<<u.contains_point(p);
-    cout<<r->contains_point(p);
-    r->rotate(M_PI);
-    cout<<r->contains_point(p);
 }
