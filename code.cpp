@@ -1,42 +1,43 @@
 #include <iostream>
 #include<math.h>
+#include<iomanip>
 using namespace std;
 
 
 class Point{
     private:
-        float x;
-        float y;
+        double x;
+        double y;
     public:
-        Point(float a, float b){
+        Point(double a, double b){
             x = a;
             y = b;
         }
         Point(){}
-        float get_x(){
+        double get_x(){
             return x;
         }
-        float get_y(){
+        double get_y(){
             return y;
         }
-        void translate_point(float a, float b){
+        void translate_point(double a, double b){
             x+=a;
             y+=b;
         }
-        void rotate_point(float angle){
-            float xnew = x*cos(angle) - y*sin(angle);
-            float ynew = x*sin(angle) + y*cos(angle);
+        void rotate_point(double angle){
+            double xnew = x*cos(angle) - y*sin(angle);
+            double ynew = x*sin(angle) + y*cos(angle);
             x = xnew;
             y = ynew;
         }
 
         bool check_line( Point b, Point c, Point d){
 
-            float slope = (( y-b.get_y() )/( x-b.get_x()));
-            float intercept = y - slope*x;
+            double slope = (( y-b.get_y() )/( x-b.get_x()));
+            double intercept = y - slope*x;
             
-            float sat1 = c.get_y()-slope*c.get_x()-intercept;
-            float sat2 = d.get_y()-slope*d.get_x()-intercept;
+            double sat1 = (c.get_y()-y)*(b.get_x()-x) - (b.get_y()-y)*(c.get_x()-x);
+            double sat2 = (d.get_y()-y)*(b.get_x()-x) - (b.get_y()-y)*(d.get_x()-x);
 
             if(sat1*sat2 >= 0.0) return true;
             else return false;
@@ -59,7 +60,7 @@ class Region: public Point{
         virtual void translate(int x, int y){
 
         }
-        virtual void rotate(float angle){
+        virtual void rotate(double angle){
 
         }
 };
@@ -75,11 +76,11 @@ class Basic: public Region{
             return r->contains_point(a);
         }
 
-        void translate(float x, float y){
+        void translate(double x, double y){
             r->translate(x,y);
         }
 
-        void rotate(float angle){
+        void rotate(double angle){
             r->rotate(angle);
         }
 };
@@ -98,12 +99,12 @@ class Union: public Region{
             else return false;
         }
 
-        void translate(float x, float y){
+        void translate(double x, double y){
             r1->translate(x,y);
             r2->translate(x,y);
         }
 
-        void rotate(float angle){
+        void rotate(double angle){
             r1->rotate(angle);
             r2->rotate(angle);
         }
@@ -120,11 +121,11 @@ class Complement: public Region{
             return !(r->contains_point(a));
         }
 
-        void translate(float x, float y){
+        void translate(double x, double y){
             r->translate(x,y);
         }
 
-        void rotate(float angle){
+        void rotate(double angle){
             r->rotate(angle);
         }
 };
@@ -142,12 +143,12 @@ class Intersection: public Region{
             else return false;
         }
 
-        void translate(float x, float y){
+        void translate(double x, double y){
             r1->translate(x,y);
             r2->translate(x,y);
         }
 
-        void rotate(float angle){
+        void rotate(double angle){
             r1->rotate(angle);
             r2->rotate(angle);
         }
@@ -161,7 +162,7 @@ class Circle: public Basic{
         Point centre;
         int radius;
     public:
-        Circle(Region *x, float a, float b, float c): Basic(x){
+        Circle(Region *x, double a, double b, double c): Basic(x){
             Point temp(a,b);
             centre = temp;
             radius = c;
@@ -178,7 +179,7 @@ class Circle: public Basic{
             centre.translate_point(x,y);
         }
 
-        void rotate(float angle){
+        void rotate(double angle){
             centre.rotate_point(angle);
         }
 };
@@ -199,12 +200,12 @@ class Triangle: public Basic{
             else return false;
         }
 
-        void tranlate(float x, float y){
+        void translate(double x, double y){
             a.translate_point(x,y);
             b.translate_point(x,y);
             c.translate_point(x,y);
         }
-        void rotate(float angle){
+        void rotate(double angle){
             a.rotate_point(angle);
             b.rotate_point(angle);
             c.rotate_point(angle);
@@ -228,17 +229,23 @@ class Square: public Basic{
             else return false;
         }
 
-        void tranlate(float x, float y){
+        void translate(double x, double y){
             a.translate_point(x,y);
             b.translate_point(x,y);
             c.translate_point(x,y);
             d.translate_point(x,y);
         }
-        void rotate(float angle){
+        void rotate(double angle){
             a.rotate_point(angle);
             b.rotate_point(angle);
             c.rotate_point(angle);
             d.rotate_point(angle);
+        }
+        void getPoints(){
+            cout<<a.get_x()<<" "<<a.get_y()<<"\n";
+            cout<<b.get_x()<<" "<<b.get_y()<<"\n";
+            cout<<c.get_x()<<" "<<c.get_y()<<"\n";
+            cout<<d.get_x()<<" "<<d.get_y()<<"\n";
         }
 };
 
@@ -258,13 +265,13 @@ class Rectangle: public Basic{
             else return false;
         }
 
-        void tranlate(float x, float y){
+        void translate(double x, double y){
             a.translate_point(x,y);
             b.translate_point(x,y);
             c.translate_point(x,y);
             d.translate_point(x,y);
         }
-        void rotate(float angle){
+        void rotate(double angle){
             a.rotate_point(angle);
             b.rotate_point(angle);
             c.rotate_point(angle);
@@ -274,8 +281,20 @@ class Rectangle: public Basic{
 
 
 int main(){
-    Region *r, *r1, *r2 ;
-    Circle c(r1,0,0,1);
+    cout<<fixed;
+    cout<<  setprecision(6);
+    Point p1(0,0), p2(1,0), p3(1,1), p4(0,1), p5(1, 1.0001), p6(2,0), p7(2,1);
+    Region *r1, *r2, *r3, *r4;
+    Square s(r1,p1,p2,p3,p4);
+    r1 = &s;
+    r1->translate(1,0);
+    Circle c(r2,1,1,1);
+    r2 = &c;
+    Intersection i(r1,r2);
+    r3 = &i;
+    Square t(r3, p2, p6, p7, p3);
+    r4 = &t;
+    Intersection i2(r3, r4);
+    cout<<i2.contains_point(p5);
 
-    
 }
