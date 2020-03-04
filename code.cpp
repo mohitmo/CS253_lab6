@@ -141,7 +141,6 @@ class Intersection: public Region{
         }
         bool contains_point(Point a){
             if( r1->contains_point(a) && r2->contains_point(a)){
-                cout<<"point is inside the intersection";
                 return true;
             }
             else return false;
@@ -624,5 +623,85 @@ int main(){
         if(!comp.contains_point(b2) && comp2.contains_point(b2)) cout<<"\tPoint is inside rotated Complement but outside inital Complement" << endl;
         else cout << "\tCan't say" << endl; 
 
+    }
+
+
+    {
+        cout << "\nAnnular Region : " << endl;
+
+        Region *r, *r1, *r2;
+        Region *r_out, *r1_out, *r2_out;
+        Point cent(2,2);
+        double rad1 = 1.0, rad2 = 2.0;
+
+        Circle c(r, cent, rad1), c_copy(r, cent, rad1), c_copy2(r, cent, rad1);  // Inner circle in annular region
+        Circle c1(r_out, cent, rad2), c1_copy(r1_out,cent,rad2), c1_copy2(r2_out, cent, rad2);  // Outer circle in annular region
+
+        r = &c;
+        r1 = &c_copy;
+        r2 = &c_copy2;
+        r_out = &c1;
+        r1_out = &c1_copy;
+        r2_out = &c1_copy2;
+
+
+        Complement comp(r), comp1(r1), comp2(r2);
+
+        Intersection i(r_out, &comp), i1(r1_out, &comp1), i2(r2_out, &comp2);
+
+        Point a(0.5,2);
+
+
+        cout << "\n1. Checking where Point (" << a.get_x() << "," << a.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 << endl;
+
+        if (i.contains_point(a)) cout<<"\tPoint is inside the annular region"<< endl;
+        else cout<<"\tPoint is outside the outside annular region" << endl;
+
+
+        Point b(2,2);
+
+
+        cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 << endl;
+        
+        if (i.contains_point(b)) cout<<"\tPoint is inside the annular region"<< endl;
+        else cout<<"\tPoint is outside the outside annular region" << endl;
+
+        float x = 2, y = 0;
+
+
+        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        i1.translate(x,y);
+
+
+        Point a1(3.5,2);
+        cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its translated version" << endl;
+
+
+        if(i.contains_point(a1) && !i1.contains_point(a1)) cout<<"\tPoint is inside inital annulus but outside translated annulus" << endl;
+        else cout << "\tCan't say" << endl;
+
+        Point b1(2.5 , 2);
+
+        cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its translated version" << endl;
+
+
+        if(!i.contains_point(b1) && i1.contains_point(b1)) cout<<"\tPoint is outside inital annulus but inside translated annulus" << endl;
+        else cout << "\tCan't say" << endl;
+
+        cout << "\n6. Rotating initial annulus " << endl;
+        i2.rotate(M_PI);
+
+        Point a2( 0.5 , 2), b2( -0.5, -2);
+
+        cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its rotated version" << endl;
+
+        if(i.contains_point(a2) && !i2.contains_point(a2)) cout<<"\tPoint is inside inital annulus but outside annulus region" << endl;
+        else cout << "\tCan't say" << endl;
+
+
+        cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its rotated version" << endl;
+
+        if(!i.contains_point(b2) && i2.contains_point(b2)) cout<<"\tPoint is inside rotated annulus but outside inital annulus" << endl;
+        else cout << "\tCan't say" << endl;
     }
 }
