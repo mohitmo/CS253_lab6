@@ -704,4 +704,81 @@ int main(){
         if(!i.contains_point(b2) && i2.contains_point(b2)) cout<<"\tPoint is inside rotated annulus but outside inital annulus" << endl;
         else cout << "\tCan't say" << endl;
     }
+    {
+        cout << "\nL-shaped Region: " <<endl;
+
+        Region *r, *r1, *r2, *r3, *r4, *r5;
+
+        Point A(0,0), B(4,0), C(4,2) , D(2,2), E(2,6), F(0,6);  
+
+        Point G(A.get_x(), D.get_y()), H(E.get_x(), A.get_y());
+
+        Rectangle rec1(r, A,B,C,G), rec1_copy(r1, A,B,C,G), rec1_copy2(r2, A,B,C,G);
+        Rectangle rec2(r3, A,H,E,F), rec2_copy(r1, A,H,E,F), rec2_copy2(r2, A,H,E,F);
+
+        r = &rec1;
+        r1 = &rec1_copy;
+        r2 = &rec1_copy2;
+        r3 = &rec2;
+        r4 = &rec2_copy;
+        r5 = &rec2_copy2;
+
+        Union u(r,r3) , u1(r1,r4) , u2(r2, r5);
+
+        Point a(1,2);
+
+
+        cout << "\n1. Checking where Point (" << a.get_x() << "," << a.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<")" << endl; 
+
+        if (u.contains_point(a)) cout<<"\tPoint is inside the L-shaped region"<< endl;
+        else cout<<"\tPoint is outside the outside L-shaped region" << endl;
+
+
+        Point b(3,3);
+
+
+        cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<")" << endl; 
+        
+        if (u.contains_point(b)) cout<<"\tPoint is inside the L-shaped region"<< endl;
+        else cout<<"\tPoint is outside the outside L-shaped region" << endl;
+
+        float x = 2, y = 2;
+
+
+        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        u1.translate(x,y);
+
+
+        Point a1(1,1);
+        cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its translated version" << endl; 
+
+
+        if(u.contains_point(a1) && !u1.contains_point(a1)) cout<<"\tPoint is inside inital L-shaped region but outside translated L-shaped region" << endl;
+        else cout << "\tCan't say" << endl;
+
+        Point b1(3 , 3);
+
+        cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its translated version" << endl; 
+
+
+        if(!u.contains_point(b1) && u1.contains_point(b1)) cout<<"\tPoint is outside inital L-shaped region but inside translated L-shaped region" << endl;
+        else cout << "\tCan't say" << endl;
+
+        cout << "\n6. Rotating initial L-shaped region " << endl;
+        u2.rotate(M_PI);
+
+        Point a2( 1 , 1), b2( -1, -1);
+
+        cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its rotated version" << endl; 
+
+        if(u.contains_point(a2) && !u2.contains_point(a2)) cout<<"\tPoint is inside inital L-shaped region but outside rotated L-shaped region" << endl;
+        else cout << "\tCan't say" << endl;
+
+
+        cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its rotated version" << endl; 
+
+        if(!u.contains_point(b2) && u2.contains_point(b2)) cout<<"\tPoint is inside rotated L-shaped region but outside inital L-shaped region" << endl;
+        else cout << "\tCan't say" << endl;
+
+    }
 }
