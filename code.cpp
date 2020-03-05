@@ -335,7 +335,7 @@ int main(){
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its translated version " << endl;
 
         if(r->contains_point(a1) && !r1->contains_point(a1)) cout<<"\tPoint is inside inital Circle but outside translated Circle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 5th Case
@@ -344,7 +344,7 @@ int main(){
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its translated version " << endl;
 
         if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital Circle but inside translated Circle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 6th Case
@@ -360,12 +360,12 @@ int main(){
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its rotated version " << endl;
 
         if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital Circle but outside rotated Circle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its rotated version " << endl;
 
         if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is outside inital Circle but inside rotated Circle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
     }
 
     //---------------------------------------   Triangle  --------------------------------------------------
@@ -416,7 +416,7 @@ int main(){
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") and its translated version" << endl;
 
         if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital Triangle but outside translated Triangle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 5th Case
@@ -425,7 +425,7 @@ int main(){
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") and its translated version" << endl;
 
         if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital Triangle but inside translated Triangle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 6th Case
@@ -440,12 +440,12 @@ int main(){
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") and its rotated version" << endl;
 
         if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital Triangle but outside rotated Triangle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") and its rotated version" << endl;
 
         if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is outside inital Triangle but inside rotated Triangle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
 
     }
@@ -497,7 +497,7 @@ int main(){
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its translated version "<< endl;
 
         if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital Square but outside translated Square" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 5th Case
@@ -506,7 +506,7 @@ int main(){
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its translated version "<< endl;
 
         if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital Square but inside translated Square" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 6th Case
@@ -521,12 +521,12 @@ int main(){
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its rotated version "<< endl;
 
         if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital Square but outside rotated Square" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its rotated version "<< endl;
 
         if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is outside inital Square but inside rotated Square" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
 
 
@@ -581,7 +581,7 @@ int main(){
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its translated version "<< endl;
 
         if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital Rectangle but outside translated Rectangle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 5th Case
@@ -590,7 +590,7 @@ int main(){
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its translated version "<< endl;
 
         if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital Rectangle but inside translated Rectangle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 6th Case
@@ -605,13 +605,13 @@ int main(){
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its rotated version "<< endl;
 
         if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital Rectangle but outside rotated Rectangle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its rotated version "<< endl;
 
         if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is outside inital Rectangle but inside rotated Rectangle" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
    
 
     }
@@ -665,7 +665,7 @@ int main(){
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its translated version " << endl;
 
         if(comp.contains_point(a1) && !comp1.contains_point(a1)) cout<<"\tPoint is inside inital Complement but outside translated Complement" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 5th Case
@@ -674,7 +674,7 @@ int main(){
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its translated version " << endl;
 
         if(!comp.contains_point(b1) && comp1.contains_point(b1)) cout<<"\tPoint is outside inital Complement but inside translated Complement" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 6th Case
@@ -689,13 +689,13 @@ int main(){
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its rotated version " << endl;
 
         if(comp.contains_point(a2) && !comp2.contains_point(a2)) cout<<"\tPoint is inside inital Complement but outside Complement region" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its rotated version " << endl;
 
         if(!comp.contains_point(b2) && comp2.contains_point(b2)) cout<<"\tPoint is outside inital Complement but inside rotated Complement" << endl;
-        else cout << "\tCan't say" << endl; 
+        else cout << "\tWrong answer" << endl; 
 
     }
 
@@ -738,7 +738,7 @@ int main(){
         // 2nd Case
         Point b(2,2);
 
-        cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 << endl;
+        cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << " and outer radius " << rad2 << endl;
         
         if (i.contains_point(b)) cout<<"\tPoint is inside the annular region"<< endl;
         else cout<<"\tPoint is outside the outside annular region" << endl;
@@ -754,19 +754,19 @@ int main(){
         // 4th Case
         Point a1(3.5,2);
 
-        cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its translated version" << endl;
+        cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << " and outer radius " << rad2 <<  " and its translated version" << endl;
 
         if(i.contains_point(a1) && !i1.contains_point(a1)) cout<<"\tPoint is inside inital annulus but outside translated annulus" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 5th Case
         Point b1(2.5 , 2);
 
-        cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its translated version" << endl;
+        cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << " and outer radius " << rad2 <<  " and its translated version" << endl;
 
         if(!i.contains_point(b1) && i1.contains_point(b1)) cout<<"\tPoint is outside inital annulus but inside translated annulus" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
 
         // 6th Case
@@ -778,16 +778,16 @@ int main(){
         // 7th and 8th Case
         Point a2( 0.5 , 2), b2( -0.5, -2);
 
-        cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its rotated version" << endl;
+        cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << " and outer radius " << rad2 <<  " and its rotated version" << endl;
 
         if(i.contains_point(a2) && !i2.contains_point(a2)) cout<<"\tPoint is inside inital annulus but outside annulus region" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
 
-        cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its rotated version" << endl;
+        cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << " and outer radius " << rad2 <<  " and its rotated version" << endl;
 
         if(!i.contains_point(b2) && i2.contains_point(b2)) cout<<"\tPoint is outside inital annulus but inside rotated annulus" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
     }
 
@@ -844,7 +844,7 @@ int main(){
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its translated version" << endl; 
 
         if(u.contains_point(a1) && !u1.contains_point(a1)) cout<<"\tPoint is inside inital L-shaped region but outside translated L-shaped region" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
 
         // 5th Case
@@ -852,7 +852,7 @@ int main(){
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its translated version" << endl; 
 
         if(!u.contains_point(b1) && u1.contains_point(b1)) cout<<"\tPoint is outside inital L-shaped region but inside translated L-shaped region" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
         
         // 6th Case
@@ -868,13 +868,13 @@ int main(){
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its rotated version" << endl; 
 
         if(u.contains_point(a2) && !u2.contains_point(a2)) cout<<"\tPoint is inside inital L-shaped region but outside rotated L-shaped region" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its rotated version" << endl; 
 
         if(!u.contains_point(b2) && u2.contains_point(b2)) cout<<"\tPoint is outside inital L-shaped region but inside rotated L-shaped region" << endl;
-        else cout << "\tCan't say" << endl;
+        else cout << "\tWrong answer" << endl;
 
     }
     
