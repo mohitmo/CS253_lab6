@@ -40,7 +40,8 @@ class Point{
             double sat1 = (c.get_y()-y)*(b.get_x()-x) - (b.get_y()-y)*(c.get_x()-x);
             double sat2 = (d.get_y()-y)*(b.get_x()-x) - (b.get_y()-y)*(d.get_x()-x);
 
-            if(sat1*sat2 >= 0.0) return true;
+            if((sat1*sat2 ) > 0) return true;
+            else if( abs(sat1*sat2 -0.0) < 1e-9) return true;
             else return false;
         }
 
@@ -894,4 +895,5 @@ int main(){
         else cout << "\tCan't say" << endl;
 
     }
+    
 }
