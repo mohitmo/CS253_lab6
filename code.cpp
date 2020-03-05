@@ -311,22 +311,22 @@ int main(){
 
         cout << "\n1. Checking where Point (" << a.get_x() << "," << a.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << endl;
 
-        if (r->contains_point(a)) cout<<"\tPoint is inside the region"<< endl;
-        else cout<<"\tPoint is outside the region" << endl;
+        if (r->contains_point(a)) cout<<"\tPoint is inside the Circle"<< endl;
+        else cout<<"\tPoint is outside the Circle" << endl;
 
         
         // 2nd Case
         Point b(2,3);
 
         cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << endl;
-        if (r->contains_point(b)) cout<<"\tPoint is inside the region"<< endl;
-        else cout<<"\tPoint is outside the region" << endl;
+        if (r->contains_point(b)) cout<<"\tPoint is inside the Circle"<< endl;
+        else cout<<"\tPoint is outside the Circle" << endl;
 
 
         // 3rd Case
         float x = 3, y = 3;
 
-        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        cout << "\n3. Translating Circle's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
         r1->translate(x,y);
 
         
@@ -334,7 +334,7 @@ int main(){
         Point a1(1,0);
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its translated version " << endl;
 
-        if(r->contains_point(a1) && !r1->contains_point(a1)) cout<<"\tPoint is inside inital region but outside translated region" << endl;
+        if(r->contains_point(a1) && !r1->contains_point(a1)) cout<<"\tPoint is inside inital Circle but outside translated Circle" << endl;
         else cout << "\tCan't say" << endl;
 
         
@@ -343,13 +343,13 @@ int main(){
 
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its translated version " << endl;
 
-        if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital region but inside translated region" << endl;
+        if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital Circle but inside translated Circle" << endl;
         else cout << "\tCan't say" << endl;
 
         
         // 6th Case
         double angle = M_PI/4;
-        cout << "\n6. Rotating initial circle " << endl;
+        cout << "\n6. Rotating initial circle " << "by " << angle << " radians" << endl;
         r2->rotate(angle);
 
         
@@ -359,12 +359,12 @@ int main(){
 
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its rotated version " << endl;
 
-        if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital region but outside rotated region" << endl;
+        if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital Circle but outside rotated Circle" << endl;
         else cout << "\tCan't say" << endl;
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its rotated version " << endl;
 
-        if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is inside rotated region but outside inital region" << endl;
+        if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is outside inital Circle but inside rotated Circle" << endl;
         else cout << "\tCan't say" << endl;
     }
 
@@ -390,22 +390,22 @@ int main(){
 
         cout << "\n1. Checking where Point (" << a.get_x() << "," << a.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") " << endl;
 
-        if (r->contains_point(a)) cout<<"\tPoint is inside the region"<< endl;
-        else cout<<"\tPoint is outside the region" << endl;
+        if (r->contains_point(a)) cout<<"\tPoint is inside the Triangle"<< endl;
+        else cout<<"\tPoint is outside the Triangle" << endl;
 
         
         // 2nd Case
         Point b(2,3);
 
         cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") " << endl;
-        if (r->contains_point(b)) cout<<"\tPoint is inside the region"<< endl;
-        else cout<<"\tPoint is outside the region" << endl;
+        if (r->contains_point(b)) cout<<"\tPoint is inside the Triangle"<< endl;
+        else cout<<"\tPoint is outside the Triangle" << endl;
 
         
         // 3rd Case
         double x = 3, y = 3;
 
-        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        cout << "\n3. Translating Triangle's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
 
         r1->translate(x,y);
 
@@ -415,7 +415,7 @@ int main(){
 
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") and its translated version" << endl;
 
-        if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital region but outside translated region" << endl;
+        if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital Triangle but outside translated Triangle" << endl;
         else cout << "\tCan't say" << endl;
 
         
@@ -424,13 +424,13 @@ int main(){
 
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") and its translated version" << endl;
 
-        if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital region but inside translated region" << endl;
+        if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital Triangle but inside translated Triangle" << endl;
         else cout << "\tCan't say" << endl;
 
         
         // 6th Case
         double angle = M_PI/2;
-        cout << "\n6. Rotating initial triangle " << endl;
+        cout << "\n6. Rotating initial triangle " << "by " << angle << " radians" << endl;
         r2->rotate(angle);
 
 
@@ -439,12 +439,12 @@ int main(){
 
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") and its rotated version" << endl;
 
-        if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital region but outside rotated region" << endl;
+        if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital Triangle but outside rotated Triangle" << endl;
         else cout << "\tCan't say" << endl;
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to triangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") and its rotated version" << endl;
 
-        if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is inside rotated region but outside inital region" << endl;
+        if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is outside inital Triangle but inside rotated Triangle" << endl;
         else cout << "\tCan't say" << endl;
 
 
@@ -472,8 +472,8 @@ int main(){
 
         cout << "\n1. Checking where Point (" << a.get_x() << "," << a.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() <<")"<< endl;
 
-        if (r->contains_point(a)) cout<<"\tPoint is inside the region"<< endl;
-        else cout<<"\tPoint is outside the region" << endl;
+        if (r->contains_point(a)) cout<<"\tPoint is inside the Square"<< endl;
+        else cout<<"\tPoint is outside the Square" << endl;
 
 
         // 2nd Case
@@ -481,14 +481,14 @@ int main(){
 
         cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() <<")"<< endl;
 
-        if (r->contains_point(b)) cout<<"\tPoint is inside the region"<< endl;
-        else cout<<"\tPoint is outside the region" << endl;
+        if (r->contains_point(b)) cout<<"\tPoint is inside the Square"<< endl;
+        else cout<<"\tPoint is outside the Square" << endl;
 
         
         // 3rd Case
         double x = 3, y = 3;
 
-        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        cout << "\n3. Translating Square's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
         r1->translate(x,y);
         
 
@@ -496,7 +496,7 @@ int main(){
         Point a1(1,0);
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its translated version "<< endl;
 
-        if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital region but outside translated region" << endl;
+        if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital Square but outside translated Square" << endl;
         else cout << "\tCan't say" << endl;
 
         
@@ -505,13 +505,13 @@ int main(){
 
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its translated version "<< endl;
 
-        if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital region but inside translated region" << endl;
+        if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital Square but inside translated Square" << endl;
         else cout << "\tCan't say" << endl;
 
         
         // 6th Case
         double angle = M_PI/2;
-        cout << "\n6. Rotating initial square " << endl;
+        cout << "\n6. Rotating initial square " << "by " << angle << " radians" << endl;
         r2->rotate(angle);
 
         
@@ -520,12 +520,12 @@ int main(){
 
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its rotated version "<< endl;
 
-        if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital region but outside rotated region" << endl;
+        if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital Square but outside rotated Square" << endl;
         else cout << "\tCan't say" << endl;
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to square with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its rotated version "<< endl;
 
-        if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is inside rotated region but outside inital region" << endl;
+        if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is outside inital Square but inside rotated Square" << endl;
         else cout << "\tCan't say" << endl;
 
 
@@ -554,8 +554,8 @@ int main(){
 
         cout << "\n1. Checking where Point (" << a.get_x() << "," << a.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() <<")"<< endl;
 
-        if (r->contains_point(a)) cout<<"\tPoint is inside the region"<< endl;
-        else cout<<"\tPoint is outside the region" << endl;
+        if (r->contains_point(a)) cout<<"\tPoint is inside the Rectangle"<< endl;
+        else cout<<"\tPoint is outside the Rectangle" << endl;
 
 
         
@@ -564,14 +564,14 @@ int main(){
 
         cout << "\n2. Checking where Point (" << b.get_x() << "," << b.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() <<")"<< endl;
 
-        if (r->contains_point(b)) cout<<"\tPoint is inside the region"<< endl;
-        else cout<<"\tPoint is outside the region" << endl;
+        if (r->contains_point(b)) cout<<"\tPoint is inside the Rectangle"<< endl;
+        else cout<<"\tPoint is outside the Rectangle" << endl;
 
         
         // 3rd Case
         double x = 3, y = 3;
 
-        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        cout << "\n3. Translating Rectangle's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
         r1->translate(x,y);
         
         
@@ -580,7 +580,7 @@ int main(){
         
         cout << "\n4. Checking where Point (" << a1.get_x() << "," << a1.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its translated version "<< endl;
 
-        if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital region but outside translated region" << endl;
+        if( r->contains_point(a1) && !r1->contains_point(a1) ) cout<<"\tPoint is inside inital Rectangle but outside translated Rectangle" << endl;
         else cout << "\tCan't say" << endl;
 
         
@@ -589,13 +589,13 @@ int main(){
 
         cout << "\n5. Checking where Point (" << b1.get_x() << "," << b1.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its translated version "<< endl;
 
-        if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital region but inside translated region" << endl;
+        if(!r->contains_point(b1) && r1->contains_point(b1)) cout<<"\tPoint is outside inital Rectangle but inside translated Rectangle" << endl;
         else cout << "\tCan't say" << endl;
 
         
         // 6th Case
         double angle = M_PI/2;
-        cout << "\n6. Rotating initial Rectangle " << endl;
+        cout << "\n6. Rotating initial Rectangle " << "by " << angle << " radians" << endl;
         r2->rotate(angle);
 
 
@@ -604,13 +604,13 @@ int main(){
 
         cout << "\n7. Checking where Point (" << a2.get_x() << "," << a2.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its rotated version "<< endl;
 
-        if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital region but outside rotated region" << endl;
+        if(r->contains_point(a2) && !r2->contains_point(a2)) cout<<"\tPoint is inside inital Rectangle but outside rotated Rectangle" << endl;
         else cout << "\tCan't say" << endl;
 
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to Rectangle with vertices (" << p1.get_x() << "," << p1.get_y() <<") , (" << p2.get_x() << "," << p2.get_y() <<") , (" << p3.get_x() << "," << p3.get_y() <<") , (" << p4.get_x() << "," << p4.get_y() << ") and its rotated version "<< endl;
 
-        if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is inside rotated region but outside inital region" << endl;
+        if(!r->contains_point(b2) && r2->contains_point(b2)) cout<<"\tPoint is outside inital Rectangle but inside rotated Rectangle" << endl;
         else cout << "\tCan't say" << endl;
    
 
@@ -655,7 +655,7 @@ int main(){
         // 3rd Case
         float x = 3, y = 3;
 
-        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        cout << "\n3. Translating Complement's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
         comp1.translate(x,y);
 
 
@@ -679,7 +679,7 @@ int main(){
         
         // 6th Case
         double angle = M_PI;
-        cout << "\n6. Rotating initial circle " << endl;
+        cout << "\n6. Rotating initial circle " << "by " << angle << " radians" << endl;
         comp2.rotate(angle);
 
         
@@ -694,7 +694,7 @@ int main(){
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to circle with centre (" << cent.get_x() << "," << cent.get_y() <<") having radius "<< rad << " and also its rotated version " << endl;
 
-        if(!comp.contains_point(b2) && comp2.contains_point(b2)) cout<<"\tPoint is inside rotated Complement but outside inital Complement" << endl;
+        if(!comp.contains_point(b2) && comp2.contains_point(b2)) cout<<"\tPoint is outside inital Complement but inside rotated Complement" << endl;
         else cout << "\tCan't say" << endl; 
 
     }
@@ -747,7 +747,7 @@ int main(){
         // 3rd Case
         float x = 2, y = 0;
 
-        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        cout << "\n3. Translating Annular region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
         i1.translate(x,y);
 
 
@@ -771,7 +771,7 @@ int main(){
 
         // 6th Case
         double angle = M_PI;
-        cout << "\n6. Rotating initial annulus " << endl;
+        cout << "\n6. Rotating initial annulus " << "by " << angle << " radians" << endl;
         i2.rotate(angle);
 
         
@@ -786,7 +786,7 @@ int main(){
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to annular region with centre (" << cent.get_x() << "," << cent.get_y() <<") having inner radius "<< rad1 << "and outer radius " << rad2 <<  " and its rotated version" << endl;
 
-        if(!i.contains_point(b2) && i2.contains_point(b2)) cout<<"\tPoint is inside rotated annulus but outside inital annulus" << endl;
+        if(!i.contains_point(b2) && i2.contains_point(b2)) cout<<"\tPoint is outside inital annulus but inside rotated annulus" << endl;
         else cout << "\tCan't say" << endl;
 
     }
@@ -835,7 +835,7 @@ int main(){
         // 3rd Case
         float x = 2, y = 2;
 
-        cout << "\n3. Translating region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
+        cout << "\n3. Translating L-shaped region's x coordinate by " << x << " and y coordinate by " << y << " unit" << endl;
         u1.translate(x,y);
 
 
@@ -857,7 +857,7 @@ int main(){
         
         // 6th Case
         double angle = M_PI;
-        cout << "\n6. Rotating initial L-shaped region " << endl;
+        cout << "\n6. Rotating initial L-shaped region " << "by " << angle << " radians" << endl;
         u2.rotate(angle);
 
         
@@ -873,7 +873,7 @@ int main(){
 
         cout << "\n8. Checking where Point (" << b2.get_x() << "," << b2.get_y() <<") lies with respect to L-shaped region with vertices (" << A.get_x() << "," << A.get_y() <<") , " << "(" << B.get_x() << "," << B.get_y() <<") , " << "(" << C.get_x() << "," << C.get_y() <<") , " << "(" << D.get_x() << "," << D.get_y() <<") , " << "(" << E.get_x() << "," << E.get_y() <<") , " << "(" << F.get_x() << "," << F.get_y() <<") and its rotated version" << endl; 
 
-        if(!u.contains_point(b2) && u2.contains_point(b2)) cout<<"\tPoint is inside rotated L-shaped region but outside inital L-shaped region" << endl;
+        if(!u.contains_point(b2) && u2.contains_point(b2)) cout<<"\tPoint is outside inital L-shaped region but inside rotated L-shaped region" << endl;
         else cout << "\tCan't say" << endl;
 
     }
